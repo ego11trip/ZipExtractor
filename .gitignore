@@ -1,0 +1,11 @@
+# 
+*.csproj
+*.sln
+*.vs
+*.git
+*.config
+*.xml
+[Bb]in/
+[Oo]bj/
+[Pp]roperties/
+
