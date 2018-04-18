@@ -20,17 +20,18 @@ namespace ZipExtractorApp
 
             var files = GetZipFilesInCurrentDirectory(CURRENT_PATH);
 
-            string fileName = files[0];
-            string zipDir = CURRENT_PATH + PATH_SEPARATOR + fileName;
-            //
-            //
-            //
-            var startExtraction = DateTime.Now;
-            Extraction(zipDir);
-            var finishExtraction = DateTime.Now;
+            for (var i = 0; i < files.Length; i++)
+            {
+                string fileName = files[i];
+                string zipDir = CURRENT_PATH + PATH_SEPARATOR + fileName;
 
-            var timePassed = TimePassed(startExtraction, finishExtraction);
-            Console.WriteLine($"Time passed: {timePassed}");
+                var startExtraction = DateTime.Now;
+                Extraction(zipDir);
+                var finishExtraction = DateTime.Now;
+
+                var timePassed = TimePassed(startExtraction, finishExtraction);
+                Console.WriteLine($"Time passed: {timePassed}");
+            }
             Console.ReadLine();
         }
         
